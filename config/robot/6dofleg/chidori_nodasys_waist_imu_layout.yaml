@@ -1,0 +1,16 @@
+# extend:
+#   ../../st_layout.yaml
+
+main:
+  imu_gsensor:
+    legends:
+      - { key: imu_gsensor, id: [0-2], label: imu_gsensor }
+    newline: False
+
+  imu_gyrometer:
+    legends:
+      - { key: imu_gyrometer, id: [0-2], label: imu_gyrometer }
+
+  waist_xyzrpy:
+    legends:
+      - { key: waist, id: [0-5], label: waist}

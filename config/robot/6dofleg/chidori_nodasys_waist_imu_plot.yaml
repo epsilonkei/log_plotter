@@ -1,0 +1,8 @@
+extend:
+  - ../../common_plot.yaml
+  - ./6dofleg_plot.yaml
+
+waist:
+  data:
+    - { log: CHIDORI(Robot)0_WAIST_xyzrpy, column: [0-6] }
+
