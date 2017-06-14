@@ -1,0 +1,20 @@
+# extend:
+#   ../../st_layout.yaml
+
+main:
+  rleg_joint_angle:
+    legends:
+      - { key: RobotHardware0_q, id: [0-5] }
+
+  lleg_joint_angle:
+    legends:
+      - { key: RobotHardware0_q, id: [6-11] }
+
+  watt_rleg:
+    legends:
+      - { key: watt, id: [0-5]}
+
+  watt_lleg:
+    legends:
+      - { key: watt, id: [6-11]}
+
