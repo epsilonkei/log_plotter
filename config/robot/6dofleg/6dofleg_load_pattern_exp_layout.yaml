@@ -10,11 +10,18 @@ main:
     legends:
       - { key: RobotHardware0_q, id: [6-11] }
 
-  watt_rleg:
-    legends:
-      - { key: watt, id: [0-5]}
+  # watt_rleg:
+  #   legends:
+  #     - { key: watt, id: [0-5]}
 
-  watt_lleg:
-    legends:
-      - { key: watt, id: [6-11]}
+  # watt_lleg:
+  #   legends:
+  #     - { key: watt, id: [6-11]}
 
+  rleg_joint_torque:
+    legends:
+      - { key: RobotHardware0_tau, id: [0-5] }
+
+  lleg_joint_torque:
+    legends:
+      - { key: RobotHardware0_tau, id: [6-11] }

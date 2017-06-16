@@ -62,6 +62,11 @@ watt:
   data:
     - { log: RobotHardware0_dq, column: [0-11]  }
     - { log: RobotHardware0_tau, column: [0-11] }
+
+RobotHardware0_tau:
+  data:
+    - { log: RobotHardware0_tau, column: [0-11] }
+
 ServoState:
   func: plot_servostate
   data:
