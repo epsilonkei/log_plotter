@@ -57,6 +57,24 @@ class PlotMethod(object):
         PlotMethod.__plot_urata_servo(plot_item, times, data_dict, logs, log_cols, cur_col, key, i, 1)
 
     @staticmethod
+    def plot_total_current(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
+        currents = []
+        for j in range(12):
+            current = data_dict[logs[0]][:, (PlotMethod.urata_len+1) * j + (1 + 1)]
+            currents.append(current)
+        total_current = numpy.sum(numpy.array(currents), axis = 0)
+        plot_item.plot(times, total_current, pen=pyqtgraph.mkPen(PlotMethod.linetypes["color"][i], width=2, style=PlotMethod.linetypes["style"][i]), name=key)
+
+    @staticmethod
+    def plot_total_current2(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
+        currents = []
+        for j in range(12):
+            current = data_dict[logs[0]][:, (PlotMethod.urata_len+1) * j + (1 + 1)]
+            currents.append(current*current)
+        total_current = numpy.sum(numpy.array(currents), axis = 0)
+        plot_item.plot(times, total_current, pen=pyqtgraph.mkPen(PlotMethod.linetypes["color"][i], width=2, style=PlotMethod.linetypes["style"][i]), name=key)
+
+    @staticmethod
     def plot_motor_temp(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
         PlotMethod.__plot_urata_servo(plot_item, times, data_dict, logs, log_cols, cur_col, key, i, 0)
 
@@ -75,6 +93,12 @@ class PlotMethod(object):
     @staticmethod
     def plot_abs_enc(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
         plot_item.plot(times, [math.degrees(x) for x in data_dict[logs[0]][:, (PlotMethod.urata_len+1) * log_cols[0] + (6+1)]],
+                       pen=pyqtgraph.mkPen('g', width=2, style=PlotMethod.linetypes["style"][i]), name=key)
+
+    @staticmethod
+    def plot_ref_enc(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
+        plot_item.plot(times,
+                       [math.degrees(x) for x in data_dict[logs[0]][:, (PlotMethod.urata_len+1) * log_cols[0] + 6]],
                        pen=pyqtgraph.mkPen('g', width=2, style=PlotMethod.linetypes["style"][i]), name=key)
 
     @staticmethod

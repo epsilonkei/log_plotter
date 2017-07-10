@@ -25,3 +25,13 @@ main:
   lleg_joint_torque:
     legends:
       - { key: RobotHardware0_tau, id: [6-11] }
+
+  # rleg_ref_joint_angle:
+  #   func: plot_ref_enc
+  #   legends:
+  #     - { key: ref_joint_angle, id: [0-5] }
+
+  # lleg_ref_joint_angle:
+  #   func: plot_ref_enc
+  #   legends:
+  #     - { key: ref_joint_angle, id: [6-11] }

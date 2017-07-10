@@ -1,0 +1,37 @@
+# extend:
+#   ../../st_layout.yaml
+
+main:
+  # rleg_joint_angle:
+  #   legends:
+  #     - { key: RobotHardware0_q, id: [0-5] }
+
+  # lleg_joint_angle:
+  #   legends:
+  #     - { key: RobotHardware0_q, id: [6-11] }
+
+  # watt_rleg:
+  #   legends:
+  #     - { key: watt, id: [0-5]}
+
+  # watt_lleg:
+  #   legends:
+  #     - { key: watt, id: [6-11]}
+
+  # rleg_joint_torque:
+  #   legends:
+  #     - { key: RobotHardware0_tau, id: [0-5] }
+
+  # lleg_joint_torque:
+  #   legends:
+  #     - { key: RobotHardware0_tau, id: [6-11] }
+
+  rleg_ref_joint_angle:
+    func: plot_ref_enc
+    legends:
+      - { key: ref_joint_angle, id: [0-5] }
+
+  lleg_ref_joint_angle:
+    func: plot_ref_enc
+    legends:
+      - { key: ref_joint_angle, id: [6-11] }
