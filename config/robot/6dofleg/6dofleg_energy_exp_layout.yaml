@@ -2,13 +2,17 @@
 #   ../../st_layout.yaml
 
 main:
-  # watt_rleg:
-  #   legends:
-  #     - { key: watt, id: [0-5]}
+  watt_rleg:
+    legends:
+      - { key: watt, id: [0-5]}
 
-  # watt_lleg:
-  #   legends:
-  #     - { key: watt, id: [6-11]}
+  watt_lleg:
+    legends:
+      - { key: watt, id: [6-11]}
+
+  total_watt:
+    legends:
+      - { key: total_watt, id: [0]}
 
   # rleg_joint_torque:
   #   legends:
@@ -26,6 +30,6 @@ main:
   #   legends:
   #     - { key: total_current, id: [6-11] }
 
-  total_current:
-    legends:
-    - { key: total_current, id: [0] }
+  # total_current:
+  #   legends:
+  #   - { key: total_current, id: [0] }

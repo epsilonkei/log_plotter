@@ -69,6 +69,12 @@ watt:
     - { log: RobotHardware0_dq, column: [0-11]  }
     - { log: RobotHardware0_tau, column: [0-11] }
 
+total_watt:
+  func: plot_total_watt
+  data:
+    - { log: RobotHardware0_dq, column: [0]  }
+    - { log: RobotHardware0_tau, column: [0] }
+
 RobotHardware0_tau:
   data:
     - { log: RobotHardware0_tau, column: [0-11] }

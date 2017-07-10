@@ -120,6 +120,18 @@ class PlotMethod(object):
         plot_item.plot(times, watt,pen=pyqtgraph.mkPen(PlotMethod.linetypes["color"][i], width=2, style=PlotMethod.linetypes["style"][i]), name=key, fillLevel=0, fillBrush=PlotMethod.linetypes["color"][i])
 
     @staticmethod
+    def plot_total_watt(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
+        watts = []
+        for j in range(12):
+            joint_vel=data_dict[logs[0]][:, j]
+            joint_tau=data_dict[logs[1]][:, j]
+            watt=joint_vel*joint_tau
+            watts.append(watt)
+        total_watt = numpy.sum(numpy.array(watts), axis = 0)
+        #print logs[0], logs[1], log_cols[0], log_cols[1]
+        plot_item.plot(times, total_watt,pen=pyqtgraph.mkPen(PlotMethod.linetypes["color"][i], width=2, style=PlotMethod.linetypes["style"][i]), name=key, fillLevel=0, fillBrush=PlotMethod.linetypes["color"][i])
+
+    @staticmethod
     def plot_diff(plot_item, times, data_dict, logs, log_cols, cur_col, key, i):
         data_minuend = data_dict[logs[0]][:, log_cols[0]]
         data_subtrahend = data_dict[logs[1]][:, log_cols[1]]
